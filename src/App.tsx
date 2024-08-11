@@ -2,11 +2,12 @@ import reactLogo from "./assets/react.svg";
 import "./App.css";
 import Form from "./components/Formularios/Form";
 import Contenedor from "./components/Contenedor";
+import CheckBoxesContainer from "./components/InputsDocuments/CheckBoxesContainer";
 
 function App() {
   return (
-    <div>
-      <div className="flex justify-center items-center -mt-40">
+    <div className="">
+      <div className="flex justify-center items-center  ">
         <a target="_blank" className="-ml-10">
           <img src={reactLogo} className="logo react " alt="React logo" />
         </a>
@@ -16,6 +17,10 @@ function App() {
       <Contenedor>
         Formulario
         <Form />
+      </Contenedor>
+      <Contenedor>
+        Documents
+        <CheckBoxesContainer />
       </Contenedor>
     </div>
   );
