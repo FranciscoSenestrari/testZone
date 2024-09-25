@@ -62,7 +62,6 @@ export default function CheckBoxesContainer() {
     });
   };
 
-  driverObj.drive();
   return (
     <div className="ckb">
       {document?.tycs.map((item, index) => (

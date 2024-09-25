@@ -3,6 +3,7 @@ import "./App.css";
 import Form from "./components/Formularios/Form";
 import Contenedor from "./components/Contenedor";
 import CheckBoxesContainer from "./components/InputsDocuments/CheckBoxesContainer";
+import GoogleMap from "./components/Maps/GoogleMaps";
 
 function App() {
   return (
@@ -21,6 +22,10 @@ function App() {
       <Contenedor>
         Documents
         <CheckBoxesContainer />
+      </Contenedor>
+      <Contenedor>
+        Maps
+        <GoogleMap />
       </Contenedor>
     </div>
   );
