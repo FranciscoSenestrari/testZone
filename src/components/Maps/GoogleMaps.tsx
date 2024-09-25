@@ -44,6 +44,7 @@ function GoogleMap() {
               position={locationMarker.position}
               key={locationMarker.id}
               title={locationMarker.name}
+              onClick={() => console.log(locationMarker.name)}
             />
           ))}
           <AdvancedMarker position={position} />
