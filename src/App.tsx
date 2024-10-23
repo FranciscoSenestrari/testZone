@@ -4,8 +4,14 @@ import Form from "./components/Formularios/Form";
 import Contenedor from "./components/Contenedor";
 import CheckBoxesContainer from "./components/InputsDocuments/CheckBoxesContainer";
 import GoogleMap from "./components/Maps/GoogleMaps";
-
+import { ToasterMessage } from "./components/ToasterMessage";
+import { Toaster, ToastBar } from "react-hot-toast";
+import { useState } from "react";
+import PercentageForm from "./components/Formularios/Input";
+import MapaProvincias from "./components/Maps/AnotherpMap";
 function App() {
+  const [value, setValue] = useState("");
+  console.log(value);
   return (
     <div className="">
       <div className="flex justify-center items-center  ">
@@ -26,6 +32,31 @@ function App() {
       <Contenedor>
         Maps
         <GoogleMap />
+      </Contenedor>
+      <Contenedor>
+        <ToasterMessage />
+        <Toaster>
+          {(t) => (
+            <ToastBar
+              toast={t}
+              style={{
+                ...t.style,
+                animation: t.visible
+                  ? "custom-enter 1s ease"
+                  : "custom-exit 1s ease",
+              }}
+            />
+          )}
+        </Toaster>
+        ;
+      </Contenedor>
+      <Contenedor>
+        Input Porcentaje
+        <PercentageForm></PercentageForm>
+      </Contenedor>
+      <Contenedor>
+        AnotherMAp
+        <MapaProvincias></MapaProvincias>
       </Contenedor>
     </div>
   );
