@@ -2,29 +2,36 @@ import React, { useEffect, useState } from 'react'
 import {QRCodeCanvas} from 'qrcode.react';
 
 export default function QR() {
-    const [token, setToken] = useState('');
-    const expirationTime = 6000; // 1 minuto
+    const [timestamp, setTimestamp] = useState(Date.now());
+
+    // URL base sin parámetros específicos
+    const baseURL = " http://x.x.x.x:3000/destino";
   
-    // Función para generar un token temporal
-    const generateToken = () => {
-      return `${Date.now()}-${Math.random().toString(36).substring(2)}`;
-    };
+    // Configura los parámetros, incluyendo el timestamp
+    const params = new URLSearchParams({
+      id: "12345",
+      tipo: "temporal",
+      timestamp: timestamp.toString(),
+    });
   
-    // Actualiza el token (y el QR) cada intervalo
+    // Genera la URL completa con los parámetros
+    const qrURL = `${baseURL}?${params.toString()}`;
+  
+    // Actualiza el timestamp cada minuto para cambiar el QR
     useEffect(() => {
-      const updateToken = () => setToken(generateToken());
-      updateToken();
-  
-      const interval = setInterval(updateToken, expirationTime);
+      const interval = setInterval(() => {
+        setTimestamp(Date.now());
+      }, 60 * 1000); // 1 minuto
   
       return () => clearInterval(interval);
     }, []);
   
     return (
       <div>
-        <QRCodeCanvas value={token} />
-        <p>QR expira cada {expirationTime / 1000} segundos</p>
+        <QRCodeCanvas value={qrURL} />
+        <p>Escanea el QR. Se actualiza cada minuto.</p>
       </div>
     );
+  
   };
   
