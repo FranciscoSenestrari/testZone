@@ -9,6 +9,7 @@ import { Toaster, ToastBar } from "react-hot-toast";
 import { useState } from "react";
 import PercentageForm from "./components/Formularios/Input";
 import MapaProvincias from "./components/Maps/AnotherpMap";
+import QR from "./components/QR";
 function App() {
   const [value, setValue] = useState("");
   console.log(value);
@@ -57,6 +58,10 @@ function App() {
       <Contenedor>
         AnotherMAp
         <MapaProvincias></MapaProvincias>
+      </Contenedor>
+      <Contenedor>
+        QR
+        <QR></QR>
       </Contenedor>
     </div>
   );
