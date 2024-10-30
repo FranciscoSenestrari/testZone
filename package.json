@@ -19,6 +19,8 @@
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.52.1",
     "react-hot-toast": "^2.4.1",
+    "react-router": "6",
+    "react-router-dom": "6",
     "tailwind-merge": "^2.4.0",
     "valibot": "0.25.0"
   },
