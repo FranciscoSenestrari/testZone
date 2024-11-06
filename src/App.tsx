@@ -14,7 +14,7 @@ function App() {
   const [value, setValue] = useState("");
   console.log(value);
   return (
-    <div className="">
+    <div className="bg-red-600">
       <div className="flex justify-center items-center  ">
         <a target="_blank" className="-ml-10">
           <img src={reactLogo} className="logo react " alt="React logo" />
