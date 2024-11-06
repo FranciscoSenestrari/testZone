@@ -5,7 +5,7 @@ export default function QR() {
     const [timestamp, setTimestamp] = useState(Date.now());
 
     // URL base sin parámetros específicos
-    const baseURL = "http://192.168.100.49:3000/destino";
+    const baseURL = "http://192.168.0.162:3000/destino";
    
     // Configura los parámetros, incluyendo el timestamp
     const params = new URLSearchParams({
@@ -28,10 +28,8 @@ const tokenTimestamp = Date.now(); // Marca el momento de creación del token
 setTimeout(() => {
   console.log(isTokenValid(tokenTimestamp)); // Verifica si el token sigue siendo válido
 }, 500); // Cambia este valor
-    
-    console.log(btoa(params.toString()))
-    // Genera la URL completa con los parámetros
-    const qrURL = `${baseURL}?${params.toString()}`;
+        // Genera la URL completa con los parámetros
+    const qrURL = `${baseURL}?${btoa(params.toString())}`;
   
     // Actualiza el timestamp cada minuto para cambiar el QR
     useEffect(() => {

@@ -23,6 +23,10 @@ function App() {
       </div>
 
       <Contenedor>
+        QR
+        <QR></QR>
+      </Contenedor>
+      <Contenedor>
         Formulario
         <Form />
       </Contenedor>
@@ -59,10 +63,7 @@ function App() {
         AnotherMAp
         <MapaProvincias></MapaProvincias>
       </Contenedor>
-      <Contenedor>
-        QR
-        <QR></QR>
-      </Contenedor>
+    
     </div>
   );
 }
