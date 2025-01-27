@@ -10,17 +10,22 @@ import { useState } from "react";
 import PercentageForm from "./components/Formularios/Input";
 import MapaProvincias from "./components/Maps/AnotherpMap";
 import QR from "./components/QR";
+import { MapSercher } from "./components/Maps/MapaSearcher";
 function App() {
   const [value, setValue] = useState("");
   console.log(value);
   return (
-    <div className="bg-red-600">
+    <div className=" animate-bounceDown">
       <div className="flex justify-center items-center  ">
         <a target="_blank" className="-ml-10">
           <img src={reactLogo} className="logo react " alt="React logo" />
         </a>
         <div className="text-xl tiltle">Test Zone</div>
       </div>
+      <Contenedor>
+        Mapa Searcher
+        <MapSercher></MapSercher>
+      </Contenedor>
 
       <Contenedor>
         QR
@@ -63,7 +68,6 @@ function App() {
         AnotherMAp
         <MapaProvincias></MapaProvincias>
       </Contenedor>
-    
     </div>
   );
 }
