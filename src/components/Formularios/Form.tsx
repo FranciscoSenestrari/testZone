@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import Fieldsets from "./Fieldsets";
 import { personaFormSchema, PersonaType } from "../../schemas/person";

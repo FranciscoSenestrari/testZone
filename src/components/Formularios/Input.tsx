@@ -1,6 +1,5 @@
 import React from "react";
 import { useForm, Controller } from "react-hook-form";
-import { string, minValue, maxValue } from "valibot";
 
 type PercentageInputProps = {
   name: string;
@@ -8,7 +7,6 @@ type PercentageInputProps = {
 };
 
 // Esquema de validación utilizando valibot v0.25.0
-const percentageSchema = string();
 
 const PercentageInput: React.FC<PercentageInputProps> = ({ name, control }) => {
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {

@@ -1,8 +1,6 @@
 import {
   maxLength,
-  maxValue,
   minLength,
-  minValue,
   number,
   object,
   optional,

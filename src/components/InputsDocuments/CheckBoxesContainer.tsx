@@ -1,32 +1,5 @@
 import { useState, useEffect } from "react";
-import { driver } from "driver.js";
 import "driver.js/dist/driver.css";
-
-const driverObj = driver({
-  showProgress: true,
-  steps: [
-    {
-      element: ".ckb",
-      popover: {
-        title: "Animated Tour Example",
-        description:
-          "Here is the code example showing animated tour. Let's walk you through it.",
-        side: "left",
-        align: "start",
-      },
-    },
-    {
-      element: ".ckb-checkbox",
-      popover: {
-        title: "Terminos y Condiciones",
-        description:
-          "Here is the code example showing animated tour. Let's walk you through it.",
-        side: "left",
-        align: "start",
-      },
-    },
-  ],
-});
 
 interface TyC {
   name: string;

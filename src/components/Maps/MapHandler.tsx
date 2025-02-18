@@ -5,14 +5,15 @@ interface Props {
   place: google.maps.places.PlaceResult | null;
 }
 
-const MapHandler = ({ place }: Props) => {
+const MapHandler = ({ place }: any) => {
+  console.log(place);
   const map = useMap();
 
   useEffect(() => {
     if (!map || !place) return;
-
-    if (place.geometry?.viewport) {
-      map.fitBounds(place.geometry?.viewport);
+    {
+      map.setCenter({ lat: place.lat, lng: place.lng });
+      map.setZoom(15);
     }
   }, [map, place]);
 

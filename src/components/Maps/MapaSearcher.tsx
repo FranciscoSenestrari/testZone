@@ -6,14 +6,14 @@ import {
   MapControl,
   Marker,
 } from "@vis.gl/react-google-maps";
-import { PlaceAutocompleteClassic } from "./AutoComplete";
+import { AutocompleteNewSDK } from "./AutoComplete";
 import { useState } from "react";
 import MapHandler from "./MapHandler";
 import { PlacePicker as TPlacePicker } from "@googlemaps/extended-component-library/place_picker.js";
+import { PlaceSearch } from "./PlacesAutocomplete";
 export function MapSercher() {
   const position = { lat: -34.603722, lng: -58.381592 };
-  const [selectedPlace, setSelectedPlace] =
-    useState<google.maps.places.PlaceResult | null>(null);
+  const [selectedPosition, setSelectedPosition] = useState(position);
 
   const bancoMacroLocations = [
     {
@@ -27,18 +27,18 @@ export function MapSercher() {
     <div className="w-full h-96">
       <APIProvider apiKey={import.meta.env.VITE_API_KEY}>
         <Map
-          defaultCenter={position}
-          defaultZoom={10}
+          defaultCenter={selectedPosition}
+          defaultZoom={12}
           mapId="gmap"
-          disableDefaultUI={true}
+          disableDefaultUI
         >
-          <MapControl position={ControlPosition.LEFT}>
-            <PlaceAutocompleteClassic
-              onPlaceSelect={setSelectedPlace}
-            ></PlaceAutocompleteClassic>
+          <MapControl position={ControlPosition.TOP_LEFT}>
+            <PlaceSearch
+              onSelect={(lat, lng) => setSelectedPosition({ lat, lng })}
+            />
           </MapControl>
-          <MapHandler place={selectedPlace} />
-          <AdvancedMarker position={position} />
+          <MapHandler place={selectedPosition} />
+          <AdvancedMarker position={selectedPosition} />
         </Map>
       </APIProvider>
     </div>
