@@ -1,10 +1,6 @@
 import { useMap } from "@vis.gl/react-google-maps";
 import React, { useEffect } from "react";
 
-interface Props {
-  place: google.maps.places.PlaceResult | null;
-}
-
 const MapHandler = ({ place }: any) => {
   console.log(place);
   const map = useMap();

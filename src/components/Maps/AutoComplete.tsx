@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback, FormEvent } from "react";
+import { useEffect, useState, useCallback, FormEvent } from "react";
 
 interface Props {
   onPlaceSelect: (place: google.maps.places.PlaceResult | null) => void;
