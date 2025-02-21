@@ -11,8 +11,9 @@ import PercentageForm from "./components/Formularios/Input";
 import MapaProvincias from "./components/Maps/AnotherpMap";
 import QR from "./components/QR";
 import { MapSercher } from "./components/Maps/MapaSearcher";
+import Documentacion from "./components/Formularios/Documentacion";
 function App() {
-  const [value, setValue] = useState("");
+  const [value] = useState("");
   console.log(value);
   return (
     <div className=" animate-bounceDown">
@@ -22,6 +23,10 @@ function App() {
         </a>
         <div className="text-xl tiltle">Test Zone</div>
       </div>
+      <Contenedor>
+        <h2>Prueba subida docu</h2>
+        <Documentacion></Documentacion>
+      </Contenedor>
       <Contenedor>
         Mapa Searcher
         <MapSercher></MapSercher>

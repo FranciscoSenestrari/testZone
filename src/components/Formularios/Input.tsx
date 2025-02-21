@@ -71,18 +71,6 @@ const PercentageForm = () => {
     console.log(data);
   };
 
-  function postProducto(idProducto: string) {
-    const data = { product: idProducto, name: "pastafrola", cantidad: 2 };
-
-    fetch("http://localhost:3000/api/carrito/" + idProducto, {
-      method: "POST",
-
-      body: JSON.stringify({
-        data: data,
-      }),
-    }).then((response) => response.json());
-  }
-
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <PercentageInput name="percentage" control={control} />

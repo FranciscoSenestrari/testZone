@@ -2,10 +2,7 @@ import React from "react";
 import { useFormContext, Controller } from "react-hook-form";
 import { InputText } from "../InputText";
 const DatosGenerales: React.FC = () => {
-  const {
-    control,
-    formState: { errors },
-  } = useFormContext();
+  const { control } = useFormContext();
 
   return (
     <>

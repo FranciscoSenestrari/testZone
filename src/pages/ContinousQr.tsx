@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
-import Contenedor from '../components/Contenedor';
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import Contenedor from "../components/Contenedor";
 import reactLogo from "../assets/react.svg";
 
 export default function ContinousQr() {
@@ -9,7 +9,7 @@ export default function ContinousQr() {
 
   // Extraer los parámetros de la URL
   const queryBase64 = location.search.substring(1); // Eliminar el "?" de la cadena
-  const decodedQuery = atob(queryBase64);  // Decodificar la URL base64
+  const decodedQuery = atob(queryBase64); // Decodificar la URL base64
   const params = new URLSearchParams(decodedQuery);
   const id = params.get("id");
   const tipo = params.get("tipo");
@@ -20,7 +20,8 @@ export default function ContinousQr() {
     const currentTimestamp = Date.now(); // Tiempo actual en milisegundos
     const elapsedTime = currentTimestamp - parseInt(timestamp!, 10); // Diferencia en milisegundos
 
-    if (elapsedTime > 60000) { // Si pasó más de 1 minuto (60000 ms)
+    if (elapsedTime > 60000) {
+      // Si pasó más de 1 minuto (60000 ms)
       setIsExpired(true); // Establecer el estado a true si ha pasado más de un minuto
     }
   }, [timestamp]); // Ejecutar el efecto cuando cambie el timestamp

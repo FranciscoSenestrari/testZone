@@ -4,7 +4,6 @@ import {
   ControlPosition,
   Map,
   MapControl,
-  Marker,
 } from "@vis.gl/react-google-maps";
 import { useState } from "react";
 import MapHandler from "./MapHandler";
@@ -13,14 +12,6 @@ export function MapSercher() {
   const position = { lat: -34.603722, lng: -58.381592 };
   const [selectedPosition, setSelectedPosition] = useState(position);
 
-  const bancoMacroLocations = [
-    {
-      id: 1,
-      name: "Banco Macro - Sucursal 1",
-      position: { lat: -34.603722, lng: -58.381592 },
-    },
-    // Add more locations here
-  ];
   return (
     <div className="w-full h-96">
       <APIProvider apiKey={import.meta.env.VITE_API_KEY}>
