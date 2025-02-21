@@ -6,10 +6,8 @@ import {
   MapControl,
   Marker,
 } from "@vis.gl/react-google-maps";
-import { AutocompleteNewSDK } from "./AutoComplete";
 import { useState } from "react";
 import MapHandler from "./MapHandler";
-import { PlacePicker as TPlacePicker } from "@googlemaps/extended-component-library/place_picker.js";
 import { PlaceSearch } from "./PlacesAutocomplete";
 export function MapSercher() {
   const position = { lat: -34.603722, lng: -58.381592 };

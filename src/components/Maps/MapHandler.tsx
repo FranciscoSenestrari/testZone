@@ -1,23 +1,17 @@
-import { useMap } from "@vis.gl/react-google-maps";
-import React, { useEffect } from "react";
+import { useMap } from "@vis.gl/react-google-maps"
+import React, { useEffect } from "react"
 
-interface Props {
-  place: google.maps.places.PlaceResult | null;
-}
-
-const MapHandler = ({ place }: any) => {
-  console.log(place);
-  const map = useMap();
+const MapHandler = ({ place }: { place: { lat: number; lng: number } }) => {
+  const map = useMap()
 
   useEffect(() => {
-    if (!map || !place) return;
-    {
-      map.setCenter({ lat: place.lat, lng: place.lng });
-      map.setZoom(15);
-    }
-  }, [map, place]);
+    if (!map || !place) return
 
-  return null;
-};
+    map.setCenter({ lat: place.lat, lng: place.lng })
+    map.setZoom(15)
+  }, [map, place])
 
-export default React.memo(MapHandler);
+  return null
+}
+
+export default React.memo(MapHandler)
